@@ -1,0 +1,60 @@
+body {
+  font-family: system-ui, sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar {
+  background-color: #e0f7fa;
+  padding: 1rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.nav-links {
+  display: flex;
+  gap: 1rem;
+}
+
+.nav-links .active {
+  text-decoration: underline;
+}
+
+.layout {
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.card {
+  background: white;
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1rem;
+}
+
+.today-focus {
+  margin-bottom: 2rem;
+}
+
+.exercise-section {
+  margin-bottom: 2rem;
+}
+
+.resources-page {
+  margin-top: 2rem;
+}
+
+button {
+  background-color: #80deea;
+  border: none;
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #4dd0e1;
+}

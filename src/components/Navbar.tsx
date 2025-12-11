@@ -1,20 +1,17 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
+import './Navbar.css';
 
 const Navbar: React.FC = () => {
   return (
-    <nav className="bg-gray-800 p-4">
-      <ul className="flex space-x-4">
-        <li>
-          <Link to="/" className="text-white hover:underline">Home</Link>
-        </li>
-        <li>
-          <Link to="/about" className="text-white hover:underline">About</Link>
-        </li>
-        <li>
-          <Link to="/contact" className="text-white hover:underline">Contact</Link>
-        </li>
-      </ul>
+    <nav className='navbar'>
+      <h1>Stroke Recovery Companion</h1>
+      <div className='nav-links'>
+        <NavLink to='/' className={({ isActive }) => (isActive ? 'active' : '')}>Home</NavLink>
+        <NavLink to='/exercises' className={({ isActive }) => (isActive ? 'active' : '')}>Exercises</NavLink>
+        <NavLink to='/log' className={({ isActive }) => (isActive ? 'active' : '')}>Daily Log</NavLink>
+        <NavLink to='/resources' className={({ isActive }) => (isActive ? 'active' : '')}>Resources</NavLink>
+      </div>
     </nav>
   );
 };
