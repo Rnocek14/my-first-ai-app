@@ -1,5 +1,5 @@
 import React from 'react';
-import './Card.css';
+import { Card } from '@/components/ui';
 
 interface CardProps {
   title: string;
@@ -7,14 +7,14 @@ interface CardProps {
   children: React.ReactNode;
 }
 
-const Card: React.FC<CardProps> = ({ title, description, children }) => {
+const CustomCard: React.FC<CardProps> = ({ title, description, children }) => {
   return (
-    <div className='card'>
-      <h2>{title}</h2>
-      <p>{description}</p>
+    <Card>
+      <h2 className='text-lg font-semibold'>{title}</h2>
+      <p className='text-sm text-muted-foreground'>{description}</p>
       {children}
-    </div>
+    </Card>
   );
 };
 
-export default Card;
+export default CustomCard;

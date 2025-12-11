@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Input, Button } from '@/components/ui';
 
 const Contact: React.FC = () => {
   const [name, setName] = useState('');
@@ -7,7 +8,6 @@ const Contact: React.FC = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission logic here
     console.log({ name, email, message });
     setName('');
     setEmail('');
@@ -15,22 +15,13 @@ const Contact: React.FC = () => {
   };
 
   return (
-    <div>
-      <h1 className='text-2xl font-bold'>Contact Us</h1>
-      <form onSubmit={handleSubmit}>
-        <label>
-          Name:
-          <input type='text' value={name} onChange={(e) => setName(e.target.value)} required />
-        </label>
-        <label>
-          Email:
-          <input type='email' value={email} onChange={(e) => setEmail(e.target.value)} required />
-        </label>
-        <label>
-          Message:
-          <textarea value={message} onChange={(e) => setMessage(e.target.value)} required />
-        </label>
-        <button type='submit'>Send</button>
+    <div className='space-y-6'>
+      <h1 className='text-3xl font-bold'>Contact Us</h1>
+      <form onSubmit={handleSubmit} className='rounded-2xl border bg-card p-6 shadow-sm'>
+        <Input label='Name' value={name} onChange={(e) => setName(e.target.value)} required />
+        <Input label='Email' type='email' value={email} onChange={(e) => setEmail(e.target.value)} required />
+        <Input label='Message' as='textarea' value={message} onChange={(e) => setMessage(e.target.value)} required />
+        <Button type='submit' className='mt-4'>Send</Button>
       </form>
     </div>
   );

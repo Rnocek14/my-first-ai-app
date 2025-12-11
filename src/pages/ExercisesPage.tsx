@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import './ExercisesPage.css';
-import Card from '../components/Card';
+import { Card } from '@/components/ui';
 
 const exercises = {
   Motor: [
@@ -28,17 +27,17 @@ const ExercisesPage: React.FC = () => {
   const completedCount = Object.keys(completed).filter(key => completed[key]).length;
 
   return (
-    <div className='exercises-page'>
-      <h1>Exercises</h1>
+    <div className='space-y-6'>
+      <h1 className='text-3xl font-bold'>Exercises</h1>
       <p>{completedCount} of {totalExercises} exercises completed today</p>
-      <div className='exercise-sections'>
+      <div className='grid gap-6 md:grid-cols-2 lg:grid-cols-3'>
         {Object.entries(exercises).map(([section, items]) => (
-          <div key={section} className='exercise-section'>
-            <h2>{section} exercises</h2>
+          <div key={section} className='space-y-4'>
+            <h2 className='text-sm font-semibold uppercase tracking-wide text-muted-foreground'>{section} exercises</h2>
             {items.map(exercise => (
               <Card key={exercise.title} title={exercise.title} description={exercise.description}>
                 <p>Suggested: {exercise.reps}</p>
-                <button onClick={() => toggleCompleted(exercise.title)}>{completed[exercise.title] ? 'Mark as undone' : 'Mark as done'}</button>
+                <Button onClick={() => toggleCompleted(exercise.title)}>{completed[exercise.title] ? 'Mark as undone' : 'Mark as done'}</Button>
               </Card>
             ))}
           </div>

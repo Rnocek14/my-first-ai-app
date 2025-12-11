@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './DailyLogPage.css';
+import { Button, Card } from '@/components/ui';
 
 interface LogEntry {
   id: number;
@@ -26,35 +26,29 @@ const DailyLogPage: React.FC = () => {
   };
 
   return (
-    <div className='daily-log-page'>
-      <h1>Daily Log</h1>
-      <form onSubmit={handleSubmit}>
-        <label>
-          How was today?
-          <select value={rating} onChange={(e) => setRating(Number(e.target.value))}>
-            <option value={1}>Very difficult</option>
-            <option value={2}>Difficult</option>
-            <option value={3}>Mixed</option>
-            <option value={4}>Good</option>
-            <option value={5}>Very good</option>
-          </select>
-        </label>
-        <label>
-          Notes / symptoms / wins:
-          <textarea value={notes} onChange={(e) => setNotes(e.target.value)} />
-        </label>
-        <button type='submit'>Submit</button>
+    <div className='space-y-6'>
+      <h1 className='text-3xl font-bold'>Daily Log</h1>
+      <form onSubmit={handleSubmit} className='rounded-2xl border bg-card p-6 shadow-sm'>
+        <label className='block'>How was today?</label>
+        <select value={rating} onChange={(e) => setRating(Number(e.target.value))} className='mt-2'>
+          <option value={1}>Very difficult</option>
+          <option value={2}>Difficult</option>
+          <option value={3}>Mixed</option>
+          <option value={4}>Good</option>
+          <option value={5}>Very good</option>
+        </select>
+        <label className='block mt-4'>Notes / symptoms / wins:</label>
+        <textarea value={notes} onChange={(e) => setNotes(e.target.value)} className='mt-2' />
+        <Button type='submit' className='mt-4'>Submit</Button>
       </form>
-      <h2>Recent entries</h2>
-      <ul>
+      <h2 className='text-lg font-semibold'>Recent entries</h2>
+      <div className='space-y-4'>
         {entries.map(entry => (
-          <li key={entry.id}>
-            <strong>{new Date(entry.date).toLocaleString()}</strong> - 
-            <span style={{ color: entry.rating >= 4 ? 'green' : entry.rating >= 2 ? 'orange' : 'red' }}>{entry.rating}</span>
+          <Card key={entry.id} title={new Date(entry.date).toLocaleString()} description={`Rating: ${entry.rating}`}>
             <p>{entry.notes}</p>
-          </li>
+          </Card>
         ))}
-      </ul>
+      </div>
     </div>
   );
 };

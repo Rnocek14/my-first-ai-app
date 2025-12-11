@@ -1,6 +1,5 @@
 import React from 'react';
-import Card from '../components/Card';
-import { Button } from '@/components/ui';
+import { Button, Card } from '@/components/ui';
 
 const HomePage: React.FC = () => {
   return (
@@ -9,13 +8,11 @@ const HomePage: React.FC = () => {
         <h1 className='text-3xl font-bold'>Small wins, every day.</h1>
         <p className='text-muted-foreground'>Track exercises, log your day, and keep your recovery organized in one place.</p>
       </section>
-      <div className='rounded-2xl border bg-card p-6 shadow-sm'>
-        <Card title="Today’s Focus" description=''>
-          <p>Motor goal: Hand and wrist mobility</p>
-          <p>Cognitive goal: Short memory exercise</p>
-          <Button className='mt-4' variant='primary'>View Today’s Exercises</Button>
-        </Card>
-      </div>
+      <Card title="Today’s Focus" description=''>
+        <p>Motor goal: Hand and wrist mobility</p>
+        <p>Cognitive goal: Short memory exercise</p>
+        <Button className='mt-4' variant='primary'>View Today’s Exercises</Button>
+      </Card>
       <div className='grid gap-6 md:grid-cols-2 lg:grid-cols-4'>
         <Card title='Exercises' description='Explore daily exercises tailored for your recovery.' />
         <Card title='Daily Log' description='Keep track of your daily progress and feelings.' />

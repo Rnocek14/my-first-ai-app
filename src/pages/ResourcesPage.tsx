@@ -1,6 +1,5 @@
 import React from 'react';
-import './ResourcesPage.css';
-import Card from '../components/Card';
+import { Card } from '@/components/ui';
 
 const resources = {
   'Emergency & Safety': [
@@ -19,11 +18,11 @@ const resources = {
 
 const ResourcesPage: React.FC = () => {
   return (
-    <div className='resources-page'>
-      <h1>Resources</h1>
+    <div className='space-y-6'>
+      <h1 className='text-3xl font-bold'>Resources</h1>
       {Object.entries(resources).map(([category, items]) => (
-        <div key={category} className='resource-category'>
-          <h2>{category}</h2>
+        <div key={category} className='space-y-4'>
+          <h2 className='text-sm font-semibold uppercase tracking-wide text-muted-foreground'>{category}</h2>
           {items.map(item => (
             <Card key={item.title} title={item.title} description={item.description}>
               <a href={item.link} target='_blank' rel='noopener noreferrer'>Open resource</a>

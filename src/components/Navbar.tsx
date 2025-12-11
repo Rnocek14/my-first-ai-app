@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import './Navbar.css';
+import { Button } from '@/components/ui';
 
 const Navbar: React.FC = () => {
   return (
@@ -13,6 +13,7 @@ const Navbar: React.FC = () => {
         <NavLink to='/resources' className={({ isActive }) => (isActive ? 'active' : '')}>Resources</NavLink>
         <NavLink to='/contact' className={({ isActive }) => (isActive ? 'active' : '')}>Contact</NavLink>
       </div>
+      <Button variant='primary' className='ml-4'>Get Started</Button>
     </nav>
   );
 };
