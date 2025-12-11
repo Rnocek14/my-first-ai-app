@@ -9,6 +9,7 @@ import ExercisesPage from './pages/ExercisesPage';
 import DailyLogPage from './pages/DailyLogPage';
 import ResourcesPage from './pages/ResourcesPage';
 import Contact from './pages/Contact';
+import { Card } from '@/components/ui/card';
 
 const App: React.FC = () => {
   return (
@@ -19,6 +20,17 @@ const App: React.FC = () => {
         subtitle="Overview of your projects and activity" 
         actions={<Button>New Project</Button>} 
       />
+      <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-6'>
+        <Card title='Project 1' description='Description for project 1.'>
+          <Button variant='secondary'>Open</Button>
+        </Card>
+        <Card title='Project 2' description='Description for project 2.'>
+          <Button variant='secondary'>Open</Button>
+        </Card>
+        <Card title='Project 3' description='Description for project 3.'>
+          <Button variant='secondary'>Open</Button>
+        </Card>
+      </div>
       <Routes>
         <Route path='/' element={<HomePage />} />
         <Route path='/exercises' element={<ExercisesPage />} />
