@@ -1,19 +1,17 @@
 import React from 'react';
-import './App.css';
+import { AppShell } from '@/layout/AppShell';
+import { PageHeader } from '@/layout/PageHeader';
+import { Button } from '@/components/ui/button';
 
 const App: React.FC = () => {
   return (
-    <div className="app-container">
-      <header className="app-header">
-        <h1 className="app-title">Welcome to My Web App</h1>
-      </header>
-      <main className="app-main">
-        <p className="app-description">This is a simple web application.</p>
-      </main>
-      <footer className="app-footer">
-        <p>© 2023 My Web App</p>
-      </footer>
-    </div>
+    <AppShell>
+      <PageHeader 
+        title="Hello from My First AI App" 
+        subtitle="If you can see this, the internal sandbox pipeline is working." 
+        actions={<Button>Get Started</Button>} 
+      />
+    </AppShell>
   );
 };
 
