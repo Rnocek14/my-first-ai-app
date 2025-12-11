@@ -1,26 +1,26 @@
 import React from 'react';
-import './HomePage.css';
 import Card from '../components/Card';
+import { Button } from '@/components/ui';
 
 const HomePage: React.FC = () => {
   return (
-    <div className='home-page'>
-      <h1>Small wins, every day.</h1>
-      <p>Track exercises, log your day, and keep your recovery organized in one place.</p>
-      <div className='today-focus'>
-        <Card title='Today’s Focus' description=''>
+    <div className='space-y-6'>
+      <section className='max-w-5xl mx-auto text-center'>
+        <h1 className='text-3xl font-bold'>Small wins, every day.</h1>
+        <p className='text-muted-foreground'>Track exercises, log your day, and keep your recovery organized in one place.</p>
+      </section>
+      <div className='rounded-2xl border bg-card p-6 shadow-sm'>
+        <Card title="Today’s Focus" description=''>
           <p>Motor goal: Hand and wrist mobility</p>
           <p>Cognitive goal: Short memory exercise</p>
-          <button>View Today’s Exercises</button>
+          <Button className='mt-4' variant='primary'>View Today’s Exercises</Button>
         </Card>
       </div>
-      <div className='what-you-can-do'>
-        <h2>What you can do here</h2>
-        <div className='columns'>
-          <Card title='Exercises' description='Explore daily exercises tailored for your recovery.' />
-          <Card title='Daily logging' description='Keep track of your daily progress and feelings.' />
-          <Card title='Helpful resources' description='Access resources to support your journey.' />
-        </div>
+      <div className='grid gap-6 md:grid-cols-2 lg:grid-cols-4'>
+        <Card title='Exercises' description='Explore daily exercises tailored for your recovery.' />
+        <Card title='Daily Log' description='Keep track of your daily progress and feelings.' />
+        <Card title='Progress' description='Monitor your recovery journey over time.' />
+        <Card title='Caregiver View' description='Tools and resources for caregivers supporting recovery.' />
       </div>
     </div>
   );
