@@ -11,7 +11,7 @@ const App: React.FC = () => {
         <p className="app-description text-muted-foreground">This is a simple web application.</p>
       </main>
       <footer className="app-footer">
-        <p className="text-muted-foreground">Â© 2023 My Web App</p>
+        <p className="text-muted-foreground">© 2023 My Web App</p>
       </footer>
     </div>
   );
