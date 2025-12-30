@@ -11,6 +11,7 @@ import ResourcesPage from './pages/ResourcesPage';
 import Contact from './pages/Contact';
 import DashboardPage from './pages/DashboardPage';
 import ButtonFixerTest from './pages/ButtonFixerTest';
+import GuardrailsImportTest from './pages/GuardrailsImportTest';
 
 const App: React.FC = () => {
   return (
@@ -24,6 +25,7 @@ const App: React.FC = () => {
         <Route path='/contact' element={<Contact />} />
         <Route path='/dashboard' element={<DashboardPage />} />
         <Route path='/button-fixer-test' element={<ButtonFixerTest />} />
+        <Route path='/guardrails-import-test' element={<GuardrailsImportTest />} />
       </Routes>
     </AppShell>
   );
