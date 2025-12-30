@@ -1,8 +1,9 @@
 import React from 'react';
-import { Card } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
 import { AppShell } from '@/layout/AppShell';
 import { PageHeader } from '@/layout/PageHeader';
+import { Button } from '@/components/ui/button';
+import { Card } from '@/components/ui/card';
+import { recipes } from '@/design-system/recipes';
 
 const HomePage: React.FC = () => {
   return (
@@ -12,15 +13,22 @@ const HomePage: React.FC = () => {
         subtitle="Overview of your projects and activity" 
         actions={<Button>New Project</Button>} 
       />
-      <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-6'>
-        <Card title='Project 1' description='Description for project 1.'>
-          <Button variant='secondary'>Open</Button>
+      <div className={recipes.metricsGrid}>
+        <Card className={recipes.cardCompact}>
+          <h2 className='text-lg font-semibold'>Total Users</h2>
+          <p className='text-2xl font-bold'>1,234</p>
         </Card>
-        <Card title='Project 2' description='Description for project 2.'>
-          <Button variant='secondary'>Open</Button>
+        <Card className={recipes.cardCompact}>
+          <h2 className='text-lg font-semibold'>Total Projects</h2>
+          <p className='text-2xl font-bold'>56</p>
         </Card>
-        <Card title='Project 3' description='Description for project 3.'>
-          <Button variant='secondary'>Open</Button>
+        <Card className={recipes.cardCompact}>
+          <h2 className='text-lg font-semibold'>Pending Tasks</h2>
+          <p className='text-2xl font-bold'>12</p>
+        </Card>
+        <Card className={recipes.cardCompact}>
+          <h2 className='text-lg font-semibold'>Completed Tasks</h2>
+          <p className='text-2xl font-bold'>30</p>
         </Card>
       </div>
     </AppShell>
