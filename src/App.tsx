@@ -12,6 +12,7 @@ import Contact from './pages/Contact';
 import DashboardPage from './pages/DashboardPage';
 import ButtonFixerTest from './pages/ButtonFixerTest';
 import GuardrailsImportTest from './pages/GuardrailsImportTest';
+import GuardrailsNegativeTest from './pages/GuardrailsNegativeTest';
 
 const App: React.FC = () => {
   return (
@@ -26,6 +27,7 @@ const App: React.FC = () => {
         <Route path='/dashboard' element={<DashboardPage />} />
         <Route path='/button-fixer-test' element={<ButtonFixerTest />} />
         <Route path='/guardrails-import-test' element={<GuardrailsImportTest />} />
+        <Route path='/guardrails-negative-test' element={<GuardrailsNegativeTest />} />
       </Routes>
     </AppShell>
   );
