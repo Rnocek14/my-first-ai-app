@@ -1,16 +1,21 @@
 import React from 'react';
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
+import { AppShell } from '@/layout/AppShell';
+import { PageHeader } from '@/layout/PageHeader';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Textarea } from '@/components/ui/textarea';
+import { recipes } from '@/design-system/recipes';
 
 const GuardrailsNegativeTest: React.FC = () => {
   return (
-    <div>
-      <h1>This is a Test Page</h1>
-      <Button>Raw HTML Button</Button>
-      <Input type="text" placeholder="Raw HTML Input"  />
-      <Textarea placeholder="Raw HTML Textarea"></Textarea>
-    </div>
+    <AppShell>
+      <PageHeader title="Guardrails Negative Test Page" subtitle="This is a bad example for guardrails testing." />
+      <div className="flex flex-col gap-6 p-6">
+        <Input placeholder="Enter raw HTML input..." />
+        <Textarea placeholder="Enter raw HTML textarea..." />
+        <Button variant="secondary">Raw HTML Button</Button>
+      </div>
+    </AppShell>
   );
 };
 
