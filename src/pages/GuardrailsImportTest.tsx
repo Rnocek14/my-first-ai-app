@@ -10,9 +10,9 @@ const GuardrailsImportTest: React.FC = () => {
     <AppShell>
       <PageHeader title="Guardrails Import Test" subtitle="Showcasing components" />
       <div className="flex flex-col gap-6 p-6">
-        <Button>Shadcn Button</Button>
-        <Input placeholder="Styled Input" />
-        <Textarea placeholder="Styled Textarea" />
+        <Input placeholder="Enter your input here..." />
+        <Textarea placeholder="Enter additional information here..." />
+        <Button type="button">Submit</Button>
       </div>
     </AppShell>
   );
