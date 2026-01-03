@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { Input, Button } from '@/components/ui';
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 
 const Contact: React.FC = () => {
   const [name, setName] = useState('');

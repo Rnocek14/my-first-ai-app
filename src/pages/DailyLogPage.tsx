@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 import { Button, Card } from '@/components/ui';
+import { Textarea } from "@/components/ui/textarea";
+import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
 
 interface LogEntry {
   id: number;
@@ -38,13 +41,13 @@ const DailyLogPage: React.FC = () => {
           <option value={5}>Very good</option>
         </select>
         <label className='block mt-4'>Notes / symptoms / wins:</label>
-        <textarea value={notes} onChange={(e) => setNotes(e.target.value)} className='mt-2' />
+        <Textarea value={notes} onChange={(e) => setNotes(e.target.value)} className='mt-2' />
         <Button type='submit' className='mt-4'>Submit</Button>
       </form>
       <h2 className='text-lg font-semibold'>Recent entries</h2>
       <div className='space-y-4'>
         {entries.map(entry => (
-          <Card key={entry.id} title={new Date(entry.date).toLocaleString()} description={`Rating: ${entry.rating}`}>
+          <Card key={entry.id} title={new Date(entry.date).toLocaleString()} description={`Rating: ${entry.rating}`}> 
             <p>{entry.notes}</p>
           </Card>
         ))}
