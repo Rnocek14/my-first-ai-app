@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Button, Card } from '@/components/ui';
-import { Textarea } from "@/components/ui/textarea";
+import { Textarea } from '@/components/ui/textarea';
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 
